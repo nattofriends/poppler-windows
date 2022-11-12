@@ -8,6 +8,7 @@ set -o pipefail
 mkdir "poppler-$POPPLER_VERSION"
 cd "poppler-$POPPLER_VERSION" || exit
 
+cp -a "$PKGS_PATH_DIR"/poppler-$POPPLER_VERSION*/Library/ .
 find "$PKGS_PATH_DIR" -type f -name "*.dll" -exec cp {} ./Library/bin \;
 
 rm -rf "$PKGS_PATH_DIR"
